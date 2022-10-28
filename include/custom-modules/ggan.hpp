@@ -41,6 +41,18 @@ namespace custom_models{
 			}
 			const int64_t input_size,output_size;
 			const double leaky_relu_;
+			int64_t get_numel(void)const
+			{
+				int64_t sum=0;
+				for(auto mod:module_cont)
+				{
+					for (auto param:mod->parameters())
+					{
+						sum+=param.numel();
+					}
+				}
+				return sum;
+			}
 		private:
 			std::vector<torch::nn::Linear> module_cont;
 
