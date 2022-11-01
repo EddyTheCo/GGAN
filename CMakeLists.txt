@@ -5,7 +5,7 @@ project(GGAN_module VERSION 0.1 DESCRIPTION "a ML-torch module for use as a gene
 find_package(Torch REQUIRED)
 
 include(FetchContent)
-add_library(GGAN INTERFACE include/custom-modules/ggan.hpp)
+add_library(GGAN INTERFACE)
 
 if(USE_YAML)
 	target_compile_definitions(GGAN INTERFACE USE_YAML)
