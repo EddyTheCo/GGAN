@@ -25,7 +25,7 @@ if(USE_YAML)
 		endif(NOT YAML-CPP_FOUND)
 	endif(NOT TARGET yaml-cpp)
 	install(TARGETS yaml-cpp EXPORT GGANTargets DESTINATION lib)
-	target_link_libraries(GGAN PRIVATE  yaml-cpp)
+	target_link_libraries(GGAN INTERFACE  yaml-cpp)
 endif(USE_YAML)
 
 
