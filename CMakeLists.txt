@@ -13,7 +13,6 @@ if(USE_YAML)
 		find_package(YAML-CPP CONFIG QUIET)
 		if(NOT YAML-CPP_FOUND)
 			message(STATUS "YAML-CPP was not found. Downloading")
-
 			FetchContent_Declare(
 				yaml-cpp
 				GIT_REPOSITORY git@github.com:jbeder/yaml-cpp.git
@@ -24,8 +23,8 @@ if(USE_YAML)
 			message(STATUS "YAML FOUND in ${YAML-CPP_DIR}")
 		endif(NOT YAML-CPP_FOUND)
 	endif(NOT TARGET yaml-cpp)
-	install(TARGETS yaml-cpp EXPORT GGANTargets DESTINATION lib)
 	target_link_libraries(GGAN INTERFACE  yaml-cpp)
+	install(TARGETS yaml-cpp EXPORT GGANTargets DESTINATION lib)
 endif(USE_YAML)
 
 
